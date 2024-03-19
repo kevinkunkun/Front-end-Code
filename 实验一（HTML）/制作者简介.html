@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.transparent{
+				background-color: transparent;
+			}
+			.blue-rounded-botton{
+				border-radius: 50%;
+				color: white;
+				font-family: KaiTi;
+				background-color: blue;
+				border: red;
+				font-size: 20px;
+				padding: 20px;
+				text-align: center;
+				cursor:pointer;
+				transition: background-color 0.3s ease;
+			}
+		</style>
+	</head>
+	<body style="background-color: red;">
+		<table border="1" bordercolor="black" cellpadding="0">
+		<caption>制作人信息</caption>
+		<tr>
+			<td>姓名</td>
+			<td>
+				<input type="text" name="用户名" value="蔡徐坤" class="transparent">
+			</td>
+			<td rowspan="4">
+				<img src="img/kunkun.png" width="300px">
+			</td>
+		</tr>
+		<tr>
+			<td>密码</td>
+			<td>
+				<input type="password" name="密码" value="123456" class="transparent">
+			</td>
+		</tr>
+		<tr>
+			<td>性别</td>
+			<td >
+				<input type="radio" checked="checked" name="sex" value="male">男（默认）
+				<input type="radio" name="sex" value="female">女
+			</td>
+		</tr>
+		<tr>
+			<td>特长</td>
+			<td>
+				<input type="checkbox" checked="checked" name="type" value="1">计算机编程（禁止修改）
+				<input type="checkbox" name="type" value="2">唱
+				<input type="checkbox" name="type" value="3">跳
+				<input type="checkbox" name="type" value="4">rap
+				<input type="checkbox" name="type" value="5">篮球
+			</td>
+		</tr>
+		<tr>
+			<td>兴趣</td>
+			<td colspan="2">
+				<select multiple="multiple" size="8" class="transparent">
+					<option label="C"></option>
+					<option label="C++"></option>
+					<option label="JNTM"></option>
+					<option label="JSP"></option>
+					<option label="PHP"></option>
+					<option label="ASP"></option>
+					<option label="WEB"></option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>籍贯</td>
+			<td colspan="2">
+				<select class="transparent">
+				<option value="1" selected="selected">四川</option>
+				<option value="2">重庆</option>
+				<option value="3">北京</option>
+				<option value="4">广东</option>
+				<option value="5">浙江</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>自我介绍</td>
+			<td colspan="2">
+				<font face="楷体" size="4">全民制作人们大家好,我是练习时长两年半的个人练习生蔡徐坤,喜欢唱,跳,rap,篮球music…在今后的节目中,我还准备了很多我自己作词、作曲、编舞的原创作品，期待的话，请多多为我投票吧。</font>
+			</td>
+		</tr>
+		<tr>
+			<td>简历附件</td>
+			<td colspan="2">
+				<input type="file">
+				<font face="宋体">（文件域）</font>
+			</td>
+		</tr>
+		<tr>
+			<td>操作</td>
+			<td colspan="2">
+				<input type="submit" value="提交按钮" class="transparent" />
+				<input type="reset"  value="重置按钮" class="transparent"/>
+				<input type="button" value="普通按钮" class="transparent"/>
+				<input type="image"  value="图像按钮" class="blue-rounded-botton"/>
+			</td>
+		</tr>
+		</table>
+	</body>
+</html>
