@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 1px #000000 solid;
+				width:500px;
+				height: 50px;
+				margin: 10px;
+			}
+			div:nth-child(1){
+				background-color: red;
+			}
+			div:nth-child(2){
+				background-image: url(img/pointer.png);
+			}
+			div:nth-child(3){
+				background-image: url(img/pointer.png);
+				background-repeat:repeat-x ;
+			}
+			div:nth-child(4){
+				background-image: url(img/pointer.png);
+				background-repeat:repeat-y ;
+			}
+			div:nth-child(5){
+				background-image: url(img/pointer.png);
+				background-repeat:no-repeat ;
+			}
+			div:nth-child(6){
+				background-image: url(img/pointer.png);
+				background-size: cover;
+			}
+			div:nth-child(7){
+				background-image: url(img/pointer.png);
+				background-size: contain;
+			}
+			div:nth-child(8){
+				background-image: url(img/pointer.png);
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		背景为红色
+		<div></div>
+		背景图（repeat）
+		<div></div>
+		背景图（repeat-x）
+		<div></div>
+		背景图（repeat-y）
+		<div></div>
+		背景图（no-repeat）
+		<div></div>
+		背景图(size: cover)
+		<div></div>
+		背景图(size: contain)
+		<div></div>
+		<div></div>
+	</body>
+</html>
