@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 250px;
+				height: 50px;
+				border: black 30px solid;
+				border-image: url(img/border.png) 30 30 30 30;
+			}
+			div:nth-child(2){
+				border-image-repeat: repeat;
+			}
+			div:nth-child(3){
+				border-image-repeat: round;
+			}
+			div:nth-child(4){
+				border-image-repeat: space;
+			}
+			*{
+				filter: grayscale(100%) !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div>这是被拉伸的边框:strtch</div>
+		<div>这是被重复的边框:repeat</div>
+		<div>这是被环绕的边框:round</div>
+		<div>这是被空白填充的边框:space</div>
+	</body>
