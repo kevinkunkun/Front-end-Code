@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//1.立即执行,把函数括起来在使用立即执行符()
+			(function fun1(){
+				console.log(1)
+			})() 
+			
+			//2.调用函数
+			function fun2(){
+				console.log(2)
+			}
+			
+			function fun2(i){
+				console.log(i)
+			}
+			
+			function fun2(i,j){
+				console.log(i+j)
+			}
+			fun2(1,1,1)
+			
+			//3.事件调用
+			function fun3(){
+				console.log(3)
+			}
+		</script>
+		
+		<button type="button" onclick="fun3()">按钮</button>
+		<a href="javascript:fun3();">超链接</a>
+	</body>
+</html>
