@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var fun1=function(){
+				document.getElementById("con").innerHTML="文本框的值被修改为:"+document.getElementById("username").value;
+			}
+		</script>
+	</head>
+	<body>
+		姓名：<input type="text" id="username" onchange="fun1()"/>
+		<hr>
+		<div id="con"></div>
+		<script type="text/javascript">
+			var div=document.getElementById("con");
+			div.oncopy=function(){
+				alert("不允许复制");
+				event.preventDefault();//阻止复制
+			}
+			
+			var input=document.getElementById("username");
+			input.addEventListener("paste",function(){
+				alert("不允许粘贴");
+				event.preventDefault();//阻止复制
+			},false)
+		</script>
+	</body>
+</html>
