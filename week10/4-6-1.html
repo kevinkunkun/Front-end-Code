@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var fun2=function(){
+				var btn1=document.querySelector("button");
+				btn1.addEventListener("click",fun1,false);
+				
+			}
+			
+			var fun1=function(){
+				alert("按钮可以使用");
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<button type="button">按钮</button><br>
+		<!-- 直接添加事件处理 -->
+		使用方法1：为按钮添加事件监听<button type="button" onclick="fun2()">添加事件监听</button><br>
+		使用方法2：为按钮移除事件监听<button type="button">移除事件监听</button>
+		<script type="text/javascript">
+			// 获得元素后,为onclicktian添加事件元素
+			var btn3=document.querySelectorAll("button")[2];
+			btn3.onclick=function(){
+				var btn1=document.querySelector("button");
+				btn1.removeEventListener("click",fun1,false);
+			}
+		</script>
+	</body>
+</html>
