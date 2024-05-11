@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多彩时钟</title>
+		<style type="text/css">
+			body {
+				background-image: url('img/time.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				font-size: 100px;
+				text-align: center;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#timeDisplay {
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="timeDisplay"></div>
+		<script type="text/javascript">
+			function updateTime() {
+				var date = new Date();
+				var hour = date.getHours();
+				var minute = date.getMinutes();
+				var second = date.getSeconds();
+
+				function padZero(num) {
+					return num < 10 ? '0' + num : num;
+				}
+
+				hour = padZero(hour);
+				minute = padZero(minute);
+				second = padZero(second);
+
+				var time = hour + ":" + minute + ":" + second;
+
+				document.getElementById("timeDisplay").innerHTML = time;
+			}
+
+			function updateColor() {
+				function getRandomColor() {
+					var r = Math.floor(Math.random() * 256);
+					var g = Math.floor(Math.random() * 256);
+					var b = Math.floor(Math.random() * 256);
+					var color = "rgb(" + r + "," + g + "," + b + ")";
+					return color;
+				}
+
+				document.getElementById("timeDisplay").style.color = getRandomColor();
+			}
+
+			updateTime();
+			updateColor();
+			setInterval(function() {
+				updateTime();
+				updateColor();
+			}, 1000);
+		</script>
+	</body>
+</html>
