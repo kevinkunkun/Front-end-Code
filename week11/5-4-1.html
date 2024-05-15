@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			let provinces = [];
+			
+			function load() {
+				let xhr = new XMLHttpRequest();
+				xhr.open("GET", "city.json", false);
+				xhr.send();
+				let data = xhr.responseText;
+				provinces = JSON.parse(data);
+				let spro = document.querySelector("select");
+				let scity = document.querySelector("select+select");
+				for (let i = 0; i < provinces.length; i++) {
+					spro.options[i] = new Option(provinces[i].name);
+				}
+				for (let i = 0; i < provinces[0].cities.length; i++) {
+					scity.options[i] = new Option(provinces[0].cities[i]);
+				}
+			}
+			
+			function fun() {
+				let spro = document.querySelector("select");
+				let scity = document.querySelector("select+select");
+				let x = provinces[spro.selectedIndex];
+				scity.options.length = 0;
+				for (let i = 0; i < x.cities.length; i++) {
+					scity.options[i] = new Option(x.cities[i]);
+				}
+			}
+		</script>
+	</head>
+	<body onload="load()">
+		请选择：<select onchange="fun()"></select>省<select></select>市
+	</body>
+</html>
