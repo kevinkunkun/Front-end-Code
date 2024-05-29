@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <style>
+        /* 添加必要的CSS样式 */
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        .input-group {
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 60px;
+        }
+        .messages {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-group">
+            <label for="name">姓名：</label>
+            <input type="text" id="name">
+        </div>
+        <div class="input-group">
+            <label for="message">留言：</label>
+            <textarea id="message"></textarea>
+        </div>
+        <button id="reset">重置</button>
+        <button id="submit">留言</button>
+        <div class="messages" id="messages"></div>
+    </div>
+
+    <script>
+        // JavaScript代码
+        const nameInput = document.getElementById('name');
+        const messageInput = document.getElementById('message');
+        const messagesDiv = document.getElementById('messages');
+
+        document.getElementById('reset').addEventListener('click', () => {
+            nameInput.value = '';
+            messageInput.value = '';
+        });
+
+        document.getElementById('submit').addEventListener('click', () => {
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+            if (name && message) {
+                const newMessage = document.createElement('div');
+                newMessage.textContent = `[${name}] 说: ${message}`;
+                messagesDiv.insertBefore(newMessage, messagesDiv.firstChild);
+
+                // 保持最多10条留言
+                while (messagesDiv.children.length > 10) {
+                    messagesDiv.removeChild(messagesDiv.lastChild);
+                }
+
+                nameInput.value = '';
+                messageInput.value = '';
+            } else {
+                alert('请输入姓名和留言内容！');
+            }
+        });
+    </script>
+</body>
+</html>

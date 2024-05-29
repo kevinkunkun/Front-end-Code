@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("button").eq(1).click(function(){
+					console.log("按钮1绑定了事件");
+					$("button").eq(0).bind("click",fun1);
+					$("button").eq(0).bind("click",fun2);
+					$("button").eq(0).bind("mouseenter",fun1);
+				})
+				
+				$("button").eq(2).one("click",function(){
+					console.log("按钮1解绑，这句话这能看到一次");
+					$("button").eq(0).unbind("click",fun1);//只解除fun2函数
+					$("button").eq(0).unbind("click");//解除单击事件的所有函数
+					$("button").eq(0).unbind();//解除所有事件的所有函数
+				})
+			})
+			
+			function fun1(){
+				console.log("函数1被执行");
+			}
+			
+			function fun2(){
+				console.log("函数2被执行");
+			}
+		</script>
+	</head>
+	<body>
+		<button>按钮</button>
+		<button>绑定</button>
+		<button>解绑</button>
+	</body>
+</html>

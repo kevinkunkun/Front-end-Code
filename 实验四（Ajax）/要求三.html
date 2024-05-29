@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				color:blue;
+			}
+		</style>
+		<script type="text/javascript">
+			let academies = [];
+
+			function load() {
+				let xhr = new XMLHttpRequest();
+				xhr.open("GET", "pzhu.json", false);
+				xhr.send();
+				let data = xhr.responseText;
+				academies = JSON.parse(data);
+				let saca = document.querySelector("select");
+				let smaj = document.querySelector("select+select");
+				for (let i = 0; i < academies.length; i++) {
+					saca.options[i] = new Option(academies[i].academy);
+				}
+				for (let i = 0; i < academies[0].majors.length; i++) {
+					smaj.options[i] = new Option(academies[0].majors[i]);
+				}
+				smaj.onchange = function() {
+					fun2();
+				};
+				fun2();
+			}
+
+			function fun1() {
+				let saca = document.querySelector("select");
+				let smaj = document.querySelector("select+select");
+				let x = academies[saca.selectedIndex];
+				smaj.options.length = 0;
+				for (let i = 0; i < x.majors.length; i++) {
+					smaj.options[i] = new Option(x.majors[i]);
+				}
+				smaj.onchange = function() {
+					fun2();
+				};
+				fun2();
+			}
+
+			function fun2() {
+				let saca = document.querySelector("select");
+				let smaj = document.querySelector("select+select");
+				let s = document.querySelector("span+span");
+				if (saca.selectedIndex >= 0 && smaj.selectedIndex >= 0) {
+					s.textContent =`${saca.options[saca.selectedIndex].text} · ${smaj.options[smaj.selectedIndex].text}`;
+				}
+			}
+		</script>
+	</head>
+
+	<body onload="load()">
+		学院：<select onchange="fun1()"></select>
+		专业：<select></select><br>
+		<span>所选专业：</span><span></span>
+	</body>
+</html>

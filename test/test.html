@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.con {
+				position: fixed;
+				right: 5%;
+				bottom: 10%;
+			}
+			.con a {
+				display: block;
+				margin: 15px 0px;
+				text-align: center;
+				text-decoration: none;
+				color: black;
+				font-family: '楷体';
+			}
+			.con a:hover, .con a:focus {
+				color: red;
+			}
+			.logo img {
+				width: 45px;
+				transition: all 0.3s ease;
+			}
+			.logo .hidden {
+				display: none;
+			}
+			.con a:hover .static, .con a:focus .static {
+				display: none;
+			}
+			.con a:hover .hidden, .con a:focus .hidden {
+				display: inline-block;
+			}
+			ul {
+				width: 75%;
+				margin: 0 auto;
+			}
+			ul > li {
+				list-style-type: none;
+				display: inline-block;
+			}
+			ul > li:hover img {
+				box-shadow: 0px 5px 30px 5px rgba(0,0,0,0.1);
+				position: relative;
+				transform: translateY(-2px);
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<!-- 示例图片列表 -->
+			<li><a href="https://www.mi.com/shop"><img src="img/product.jpg" alt=""></a></li>
+			<!-- 更多图片元素 -->
+		</ul>
+		<div class="con">
+			<a href="https://www.mi.com/shop">
+				<span class="logo">
+					<span class="static"><img src="img/1-1.png" alt="个人中心"></span>
+					<span class="hidden"><img src="img/1-2.png" alt="个人中心"></span>
+				</span>
+				<br>
+				个人中心
+			</a>
+			<a href="https://www.mi.com/shop">
+				<span class="logo">
+					<span class="static"><img src="img/2-1.png" alt="售后服务"></span>
+					<span class="hidden"><img src="img/2-2.png" alt="售后服务"></span>
+				</span>
+				<br>
+				售后服务
+			</a>
+			<a href="https://www.mi.com/shop">
+				<span class="logo">
+					<span class="static"><img src="img/3-1.png" alt="人工服务"></span>
+					<span class="hidden"><img src="img/3-2.png" alt="人工服务"></span>
+				</span>
+				<br>
+				人工服务
+			</a>
+			<a href="https://www.mi.com/shop">
+				<span class="logo">
+					<span class="static"><img src="img/4-1.png" alt="购物车"></span>
+					<span class="hidden"><img src="img/4-2.png" alt="购物车"></span>
+				</span>
+				<br>
+				购物车
+			</a>
+		</div>
+	</body>
+</html>
