@@ -3,7 +3,53 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
+		<style type="text/css">
+			p {
+			  font-weight: 25;
+			  font-size: 30px;
+			  font-family: '楷体';
+			  line-height: 1.4;
+			  margin: 10px;
+			  text-align: left;
+			  text-indent: 2em;
+			  color: black;
+			  overflow: hidden;
+			}
+			
+			@supports (font-variant-caps: small-caps) {
+			  .multicol:first-of-type p:first-of-type {
+			    font-variant-caps: small-caps;
+			  }
+			}
+			
+			.multicol {
+			  column-count: 1;
+			  column-gap: 2rem;
+			}
+			
+			  .multicol {
+			    padding: 0 1rem;
+			  }
+			  
+			  .img1{
+			    float: right;
+			    margin-right: 10px;
+			    width: 510px;
+			    height: 623px;
+			  
+			  }
+		</style>
 	</head>
 	<body>
+		<div class="multicol">
+		            <p>
+		              五四运动是中国近现代史上的一个重要转折点，它标志着中国社会思想和政治发展的重大变革。1919年5月4日，北京大学等高等院校的学生因巴黎和会上中国外交的失败而举行了声势浩大的爱国运动，抗议列强对中国的不公待遇，尤其是对山东问题的解决方式。学生们走上街头，发表演说，焚烧赵家楼，呼喊“外争主权，内除国贼”的口号，掀起了一场反对帝国主义和封建主义的群众运动。这场运动迅速蔓延至全国，得到了广大工人、商人和市民的响应，形成了一股强大的社会力量。
+		            </p>
+		            <br><br>
+		            <p>
+		              五四运动不仅是一次反帝反封建的政治斗争，更是一场思想解放的文化运动。它打破了千百年来封建礼教的束缚，提倡科学和民主，推动了新文化运动的深入发展。五四运动中的青年学生们，高举着“德先生”（民主）和“赛先生”（科学）的旗帜，呼唤着民族独立和社会进步。他们的勇敢和智慧，激发了全国人民的觉醒，成为了中国现代化进程的重要推动力。
+		            </p>
+		            <img src="@/assets/back/image_23.jpg" alt="" class="img1">
+		          </div>
 	</body>
 </html>
