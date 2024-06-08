@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>多种方法实现事件响应</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap">
+		<style type="text/css">
+			body {
+				font-family: 'Noto Sans SC', sans-serif;
+			}
+			
+			div{
+				margin: 10px 0;
+			}
+		</style>
+		<script src="js/jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function fun1(){
+				alert("你已经点击了按钮1");
+			};
+			
+			function fun3(){
+				alert("你已经点击了按钮3");
+			};
+			
+			function fun5(){
+				alert("你已经点击了按钮5");
+			};
+			
+			$(function(){
+				$("button").eq(3).click(function(){
+					alert("你已经点击了按钮4");
+				})
+			});
+			
+			$(function(){
+				$("button").eq(4).bind("click",fun5);
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+		直接为HTML标签添加事件响应：
+		<button type="button" onclick="fun1()">按钮1</button>
+		</div>
+		<div>
+		为元素onclik属性添加事件相应：
+		<button type="button" id="b2">按钮2</button>
+		</div>
+		<div>
+		使用监听器监听元素的click事件：
+		<button type="button" id="b3">按钮3</button>
+		</div>
+		<div>
+		使用jQuery的click()方法添加事件相应：
+		<button type="button">按钮4</button>
+		</div>
+		<div>
+		使用jQuery的bind()方法添加事件相应:
+		<button type="button">按钮5</button>
+		</div>
+		
+		<script type="text/javascript">
+			var click=document.getElementById("b2");
+			click.onclick = function() {
+				alert("你已经点击了按钮2");
+			};
+			
+			var listenner=document.getElementById("b3");
+			listenner.addEventListener("click",fun3,false);
+		</script>
+	</body>
+</html>
