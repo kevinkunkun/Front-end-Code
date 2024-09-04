@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易计算器</title>
+		<style>
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				font-family: "微软雅黑", ;
+			}
+
+			#calculator {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				width: 300px;
+				gap: 10px;
+			}
+
+			#inputField {
+				grid-column: span 4;
+				height: 40px;
+				font-size: 20px;
+				text-align: right;
+				padding-right: 10px;
+			}
+
+			button {
+				height: 50px;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="calculator">
+			<input type="text" id="inputField" disabled>
+			<button onclick="fun('C')">C</button>
+			<button onclick="fun('←')">←</button>
+			<button onclick="fun('(')">(</button>
+			<button onclick="fun(')')">)</button>
+			<button onclick="fun('7')">7</button>
+			<button onclick="fun('8')">8</button>
+			<button onclick="fun('9')">9</button>
+			<button onclick="fun('/')">/</button>
+			<button onclick="fun('4')">4</button>
+			<button onclick="fun('5')">5</button>
+			<button onclick="fun('6')">6</button>
+			<button onclick="fun('*')">*</button>
+			<button onclick="fun('1')">1</button>
+			<button onclick="fun('2')">2</button>
+			<button onclick="fun('3')">3</button>
+			<button onclick="fun('-')">-</button>
+			<button onclick="fun('0')">0</button>
+			<button onclick="fun('.')">.</button>
+			<button onclick="fun('=')">=</button>
+			<button onclick="fun('+')">+</button>
+		</div>
+
+		<script>
+			function fun(button) {
+				const inputField = document.getElementById('inputField');
+				switch (button) {
+					case 'C':
+						inputField.value = '';
+						break;
+					case '←':
+						inputField.value = inputField.value.slice(0, -1);
+						break;
+					case '=':
+						const result = new Function('return ' + inputField.value)();
+						inputField.value = Number(result.toFixed(15));
+						break;
+					default:
+						inputField.value += button;
+						break;
+				}
+			}
+		</script>
+	</body>
+</html>

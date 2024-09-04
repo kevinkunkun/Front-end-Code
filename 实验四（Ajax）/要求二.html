@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>XML数据加载示例</title>
+	<style type="text/css">
+		span+span{
+			color:red;
+		}
+	</style>
+    <script type="text/javascript">
+        function fun1() {
+            let xhr = new XMLHttpRequest();
+            xhr.open("get", "person1.xml", false);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let data = xhr.responseXML;
+                    let title = data.getElementsByTagName("title")[0];
+                    document.getElementById("s1").textContent =title.textContent;
+					let name = data.getElementsByTagName("name")[0];
+					document.getElementById("s2").textContent =name.textContent;
+					let tag = data.getElementsByTagName("tag")[0];
+					document.getElementById("s3").textContent =tag.textContent;
+					let achievement = data.getElementsByTagName("achievement")[0];
+					document.getElementById("s4").textContent =achievement.textContent;
+					let describe = data.getElementsByTagName("describe")[0];
+					document.getElementById("s5").textContent =describe.textContent;
+                }
+            };
+            xhr.send();
+        }
+		
+		function fun2() {
+		    let xhr = new XMLHttpRequest();
+		    xhr.open("get", "person2.xml", false);
+		    xhr.onreadystatechange = function () {
+		        if (xhr.readyState === 4 && xhr.status === 200) {
+		            let data=xhr.responseXML;
+		            let person=data.getElementsByTagName("person")[0];
+		            document.getElementById("s6").textContent=person.getAttribute("title");
+		            document.getElementById("s7").textContent=person.getAttribute("name");
+					document.getElementById("s8").textContent=person.getAttribute("tag");
+					document.getElementById("s9").textContent=person.getAttribute("achievement");
+					document.getElementById("s10").textContent=person.getAttribute("describe");
+		        }
+		    };
+		    xhr.send();
+		}
+    </script>
+</head>
+<body>
+    <h1>点击按钮请求XML数据</h1>
+    <h2>person1.xml的XML的文本信息如下：</h2>
+    <span style="font-weight: bold;">标题：</span><span id="s1"></span><br>
+	<span style="font-weight: bold;">姓名：</span><span id="s2"></span><br>
+	<span style="font-weight: bold;">头衔：</span><span id="s3"></span><br>
+	<span style="font-weight: bold;">成就：</span><span id="s4"></span><br>
+	<span style="font-weight: bold;">简述：</span><span id="s5"></span><br>
+    <button onclick="fun1()">读取XML文本内容</button>
+    <hr>
+    <h2>person2.xml的XML的文本信息如下：</h2>
+    <span style="font-weight: bold;">标题：</span><span id="s6"></span><br>
+    <span style="font-weight: bold;">姓名：</span><span id="s7"></span><br>
+    <span style="font-weight: bold;">头衔：</span><span id="s8"></span><br>
+    <span style="font-weight: bold;">成就：</span><span id="s9"></span><br>
+    <span style="font-weight: bold;">简述：</span><span id="s10"></span><br>
+    <button onclick="fun2()">读取XML文本内容</button>
+</body>
+</html>

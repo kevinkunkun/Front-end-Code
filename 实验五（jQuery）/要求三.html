@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>信息悬停展示</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap">
+    <script src="js/jquery-3.7.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+		body{
+			font-family: 'Noto Sans SC',sans-serif;
+		}
+		
+        .u1 {
+			float: left;
+            list-style-type: none;
+            text-align: center;
+            width: 280px;
+			margin: 0; 
+			padding: 0; 
+        }
+		
+		li{
+			margin: 0px; 
+			padding: 0px; 
+		}
+		
+        .u2 {
+			font-size: 18px;
+            text-align: left;
+            display: none;
+        }
+        
+        div {
+			font-size: 28px;
+            background-color: red;
+            cursor: pointer;
+			margin: 5px 5px;
+			padding: 0px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+            $(".d1").mouseenter(function() {
+                $(".d1+ul").stop(true, true).slideDown(500, function() {
+                    console.log("列表已经划入");
+                });
+            });
+
+            $(".d1").mouseleave(function() {
+                $(".d1+ul").stop(true, true).slideUp(500, function() {
+                    console.log("列表已经划出");
+                });
+            });
+			
+			$(".d2").mouseenter(function() {
+			    $(".d2+ul").stop(true, true).slideDown(500, function() {
+			        console.log("列表已经划入");
+			    });
+			});
+			
+			$(".d2").mouseleave(function() {
+			    $(".d2+ul").stop(true, true).slideUp(500, function() {
+			        console.log("列表已经划出");
+			    });
+			});
+			
+			$(".d3").mouseenter(function() {
+			    $(".d3+ul").stop(true, true).slideDown(500, function() {
+			        console.log("列表已经划入");
+			    });
+			});
+			
+			$(".d3").mouseleave(function() {
+			    $(".d3+ul").stop(true, true).slideUp(500, function() {
+			        console.log("列表已经划出");
+			    });
+			});
+        });
+    </script>
+</head>
+<body>
+    <ul class="u1">
+        <li>
+            <div class="d1">四个自信</div>
+            <ul type="circle" class="u2">
+                <li>道路自信</li>
+                <li>理论自信</li>
+                <li>制度自信</li>
+                <li>文化自信</li>
+            </ul>
+        </li>
+    </ul>
+	
+	<ul class="u1">
+	    <li id="l1">
+	        <div class="d2">四个意识</div>
+	        <ul type="circle" class="u2">
+	            <li>政治意识</li>
+	            <li>大局意识</li>
+	            <li>核心意识</li>
+	            <li>看齐意识</li>
+	        </ul>
+	    </li>
+	</ul>
+	
+	<ul class="u1">
+	    <li>
+	        <div class="d3">四个全面</div>
+	        <ul type="circle" class="u2">
+	            <li>全面建设社会主义现代化国家</li>
+	            <li>全面深化改革</li>
+	            <li>全面依法治国</li>
+	            <li>全面从严治党</li>
+	        </ul>
+	    </li>
+	</ul>
+</body>
+</html>

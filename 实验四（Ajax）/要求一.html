@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fun1(){
+				//1.创建核心对象
+				let xhr=new XMLHttpRequest();
+				//2.创建请求
+				xhr.open("get","info.txt",false);//同步请求
+				//3.发送请求
+				xhr.send();
+				//4.处理数据
+				let data=xhr.responseText;
+				document.getElementById("s1").innerHTML=data;
+			}
+			
+			function fun2(){
+				//1.创建核心对象
+				let xhr=new XMLHttpRequest();
+				//2.创建请求
+				xhr.open("get","info.txt",true);//异步请求
+				//3.发送请求
+				xhr.send();
+				//4.处理数据
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						let data=xhr.responseText;
+						document.getElementById("s2").innerHTML=data;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>点击按钮获得info.txt的文本数据（异步请求）</div>
+		<button type="button" onclick="fun1()">请求信息</button><br>
+		获得的数据：<span id="s1" style="color:red;"></span><br>
+		<hr>
+		<div>点击按钮获得info.txt的文本数据（同步请求）</div>
+		<button type="button" onclick="fun2()">获得信息</button><br>
+		获得的数据：<span id="s2" style="color:red;"></span><br>
+	</body>
+</html>

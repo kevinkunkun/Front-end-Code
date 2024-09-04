@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+html{background:#FFF;font-size:62.5%; /* 10÷16=62.5% */}
+body{font-size:14px; /* 14÷10=1.4 */color: #333;font-family:'Microsoft YaHei',SimSun,SimHei ,"STHeiti Light",STHeiti,"Lucida Grande", Tahoma,Arial, Helvetica, sans-serif;}
+html,body,address,blockquote,div,dl,form,h1,h2,h3,h4,h5,h6,ol,p,pre,table,ul,dd,dl,dt,li,tbody,td,tfoot,th,thead,tr,button,del,ins,map,object,a,abbr,acronym,b,bdo,big,br,cite,code,dfn,em,img,kbd,q,samp,small,span,sub,sup,tt,var,legend,fieldset{margin:0px;padding:0px;/*color: #282828;*/ -webkit-font-smoothing: subpixel-antialiased;}
+strong,i{padding:0;margin:0; -webkit-font-smoothing: subpixel-antialiased;}
+table{border-collapse:collapse;border-spacing:0;width:100%;}
+fieldset,img{border:0;}
+img,object{max-width:100%;/*height:auto;*/width:auto\9;/* for ie8 */-ms-interpolation-mode: bicubic;}
+a{outline:none;blr:expression(this.onFocus=this.blur());text-decoration:none;color: #333;}
+a:hover{color: #900000;text-decoration: none;}
+input[type='button']{outline:none;border:0 none;background-color:transparent;cursor:pointer;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:400;}
+ul,ol,li{list-style:none outside none;}
+.tc{text-align:center !important;}
+.tl{text-align:left  !important;}
+.tr{text-align:right  !important;}
+.pa{position: absolute;}
+.pr{position: relative;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';content:none;}
+input,textarea,select{font-weight:inherit;}
+input,select,textarea,button {vertical-align:middle}
+.imgResponsive{width: 100%;height: 0;padding-bottom:56.25%;overflow:hidden;display: block; }
+.imgResponsive img{transition: all 0.8s ease-in-out;width: 100%;}
+.imgResponsive img:hover{transform: scale(1.15);opacity: 0.85;}
+.clear{width: 100%;overflow:hidden;height: 0;}
+.clearfix:after { content: " "; display: block; clear: both;  height: 0;   visibility: hidden;}
+.clearfix { zoom: 1;}
+
+
+.logo a{display: block; }
+.logo_01{position: absolute;left: 307px;top: 70px;font-size: 0;}
+.logo_01 a{display: inline-block;*display: inline;*zoom:1;vertical-align: middle;}
+.logo-pku{width: 180px;padding-right: 10px;}
+.logo-news{width: 95px;}
+.logo_02{text-align: center;padding-top: 58px;}
+
+.footer{background:url(../../images/20190504/footer.jpg) no-repeat top center;background-size: cover;}
+.footer > div{width: 1200px;padding:44px 0;margin:0 auto;font-size: 0;text-align: center;line-height: 22px;}
+.footer span,.footer strong{display: inline-block;font-size: 14px;}
+.footer strong {margin:0 10px;}
+
+@media screen and (max-width:1386px){
+	.footer{font-size: 12px;}
+	.footer > div{width: 1000px;}
+}
+@media screen and (max-width:1386px){
+	.footer > div{width: auto;padding:15px;}
+}
+@media screen and (max-width:640px){
+	.footer strong{display: none;}
+	.footer span{margin:0 5px;}
+	.footer br{display: none;}
+}
